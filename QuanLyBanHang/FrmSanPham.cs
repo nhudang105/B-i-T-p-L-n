@@ -33,17 +33,36 @@ namespace QuanLyBanHang
             name = txtTenSP.Text;
             unit = txtDvt.Text;
             unitprice = txtDonGia.Text;
-            SanPham p = new SanPham(id, name, unit, unitprice);
-
-            int NumberOfRows = SPBUS.Add(p);
-            if (NumberOfRows > 0)
+            if (string.IsNullOrEmpty(id))// Nếu id rỗng 
             {
-                List<SanPham> list = SPBUS.LoadSanPham();
-                dgvSanPham.DataSource = list;
-                MessageBox.Show("Successfully Added " + NumberOfRows + " Product");
+                MessageBox.Show("Chưa nhập Mã sản phẩm");
+            }
+            else if (string.IsNullOrEmpty(name))// Nếu name rỗng 
+            {
+                MessageBox.Show("Chưa nhập Tên sản phẩm");
+            }
+            else if(string.IsNullOrEmpty(unit))// Nếu unit rỗng 
+            {
+                MessageBox.Show("Chưa nhập Đơn vị tính");
+            }
+            else if(string.IsNullOrEmpty(unitprice))// Nếu unitprice rỗng 
+            {
+                MessageBox.Show("Chưa nhập Đơn giá");
             }
             else
-                MessageBox.Show("Add Failed");
+            {
+                SanPham p = new SanPham(id, name, unit, unitprice);
+
+                int NumberOfRows = SPBUS.Add(p);
+                if (NumberOfRows > 0)
+                {
+                    List<SanPham> list = SPBUS.LoadSanPham();
+                    dgvSanPham.DataSource = list;
+                    MessageBox.Show("Successfully Added " + NumberOfRows + " Product");
+                }
+                else
+                    MessageBox.Show("Add Failed");
+            }
         }
 
         private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)

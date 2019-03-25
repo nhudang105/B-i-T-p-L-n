@@ -9,7 +9,7 @@ namespace BUS
 {
     public class UsersBUS
     {
-        Users u = new Users();
+        UsersDAO u = new UsersDAO();
 
         public bool Login(string user, string pass)
         {

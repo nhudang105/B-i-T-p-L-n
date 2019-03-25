@@ -38,7 +38,7 @@ namespace DAO
             string sql = "INSERT INTO SanPham (MaSP, TenSP, Donvitinh, Dongia) values ('" + p.MaSP + "','" + p.TenSP + "','" + p.Donvitinh + "','" + p.Dongia + "')";
 
             int NumberOfRows = MyExecuteNonQuery(sql);
-            if (NumberOfRows > 0)
+            if (NumberOfRows > 0) // nếu thêm thành công trả vè 1 số dương
                 return NumberOfRows;
             else
                 return -1;
@@ -52,6 +52,7 @@ namespace DAO
                 return NumberOfRows;
             else
                 return -1;
-        }
+        }     
     }
+    
 }

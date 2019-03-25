@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DAO
 {
-    public class Users : DataProvider
+    public class UsersDAO : DataProvider
     {
         public bool Login(string user, string pass)
         {
