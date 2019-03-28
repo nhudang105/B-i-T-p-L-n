@@ -76,7 +76,7 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(188, 225);
+            this.btnLogin.Location = new System.Drawing.Point(255, 227);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(104, 40);
             this.btnLogin.TabIndex = 2;
@@ -109,6 +109,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmLogin";
             this.Text = "FrmLogin";
+            //this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

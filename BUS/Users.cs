@@ -4,16 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAO;
+using DTO;
 
 namespace BUS
 {
     public class UsersBUS
     {
-        UsersDAO u = new UsersDAO();
+        UsersDAO uDAO = new UsersDAO();
+
+        public List<Users> LoadUsers()
+        {
+            return uDAO.LoadUsers();
+        }
 
         public bool Login(string user, string pass)
         {
-            return u.Login(user, pass);
+            return uDAO.Login(user, pass);
+        }
+
+        public int Add(Users u)
+        {
+            return uDAO.Add(u);
         }
     }
 }
