@@ -19,8 +19,7 @@ namespace QuanLyBanHang
         {
             InitializeComponent();
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void Login()
         {
             string user = txtUserName.Text;
             string pass = txtPassword.Text;
@@ -35,7 +34,7 @@ namespace QuanLyBanHang
                 //MessageBox.Show("Login Failed");
                 string msg = "Thông tin đăng nhập không đúng, bạn có muốn thử lại?";
                 DialogResult result = MessageBox.Show(msg, "Login", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-                if (result == DialogResult.Retry )
+                if (result == DialogResult.Retry)
                 {
                     txtUserName.Text = " ";
                     txtPassword.Text = " ";
@@ -47,52 +46,19 @@ namespace QuanLyBanHang
                 }
             }
         }
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            Login();
+        }
 
-        //private void FrmLogin_Load(object sender, EventArgs e)
-        //{
-        //    this.Show();
-        //    this.Enabled = false;
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
 
-        //    FrmSignUp frm = new FrmSignUp();
-        //    DialogResult result = frm.ShowDialog();
-        //    if (result == DialogResult.OK)
-        //    {
-        //        this.Enabled = true;
-        //    }
-        //    else
-        //    {
-        //        Application.Exit();
-        //    }
-        //}
-        //private void Login(string user, string pass)
-        //{
-        //    // string PASSWORD_PATTERN = "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0 - 9])(?=.*[a - z]).{ 8,}$";
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Login();
+            }
+        }
 
-        //    // ^ : bắt đầu chuôi
-        //    // $ : kết thúc chuỗi
-        //    // (): nhóm các ký tự 
-        //    // . : kí tự bất kỳ
-        //    // * : số lần lặp bất kỳ
-        //    // ?=: cái này hơi căng
-
-        //    string PASSWORD_PATTERN = "^(?=.*[A-Z])" // [A-Z] chứa ký tự in hoa 
-        //                            + "(?=.*[!@#$&*])" // [!@#$&*] chứa ký tự đặt biệt
-        //                            + "(?=.*[0-9])" // [0-9] chứa ký tự số
-        //                            + "(?=.*[a-z])" // [a-z] chứa ký tự in thường
-        //                            + ".{8,}$"; // {8,} độ dài từ 8 trở lên
-
-        //    // Match,Regex : xài thư viện System.Text.RegularExpressions
-        //    Match match = Regex.Match(pass, PASSWORD_PATTERN);
-        //    UsersBUS u = new UsersBUS();
-        //    if (match.Success)
-        //    {
-        //        // Kiểm tra UserName,nếu chưa tồn tại thì cho đăng ký
-
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Password không đúng định dạng");
-        //    }
-        //}
     }
 }

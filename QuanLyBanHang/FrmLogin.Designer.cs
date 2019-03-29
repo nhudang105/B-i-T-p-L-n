@@ -64,6 +64,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(230, 32);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUserName
             // 
@@ -76,13 +77,13 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(255, 227);
+            this.btnLogin.Location = new System.Drawing.Point(179, 219);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(104, 40);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);         
             // 
             // lbWelcome
             // 
@@ -108,8 +109,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmLogin";
-            this.Text = "FrmLogin";
-            //this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.Text = "FrmLogin";          
             this.ResumeLayout(false);
             this.PerformLayout();
 
