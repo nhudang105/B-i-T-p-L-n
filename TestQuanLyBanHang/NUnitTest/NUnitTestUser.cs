@@ -3,6 +3,7 @@ using NUnit;
 using NUnit.Framework;
 using DTO;
 using DAO;
+
 namespace TestQuanLyBanHang.NUnitTest
 {
     [TestFixture]
@@ -22,6 +23,7 @@ namespace TestQuanLyBanHang.NUnitTest
         [TestCase("admin", null, false, Description = "Trường hợp không nhập password")]
         [TestCase("admin123", "12345", false, Description = "Trường hợp sai username")]
         [TestCase(null, "12345", false, Description = "Trường hợp không nhập username")]
+
         public void TestLogin(string userName, string password, bool expected)
         {
             Assert.AreEqual(expected, userDAO.Login(userName, password));
