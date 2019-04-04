@@ -119,7 +119,6 @@
             // 
             // txtMa
             // 
-            this.txtMa.Enabled = false;
             this.txtMa.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMa.Location = new System.Drawing.Point(131, 24);
             this.txtMa.Name = "txtMa";

@@ -14,7 +14,7 @@ namespace DAO
 
         public DataProvider()
         {
-            string cnStr = "Data Source=.;Initial Catalog=QLBanHang;Integrated Security=True";
+            string cnStr = "Data Source=.;Initial Catalog=QLBH;Integrated Security=True";
             cn = new SqlConnection(cnStr);
         }
 

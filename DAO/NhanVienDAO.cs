@@ -13,7 +13,7 @@ namespace DAO
         public List<NhanVien> LoadNhanVien()
         {
             Connect();
-            string sql = "SELECT * FROM Nhanvien";
+            string sql = "SELECT * FROM NhanVien";
 
             SqlDataReader dr = MyExecuteReader(sql);
             string id, ho, name, address, phone;
@@ -36,7 +36,7 @@ namespace DAO
 
         public int Add(NhanVien em)
         {
-            string sql = "INSERT INTO Nhanvien (HoNV, Ten, Diachi, Dienthoai) values ('" + em.HoNV + "','" + em.Ten + "','" + em.Diachi + "','" + em.Dienthoai + "')";
+            string sql = "INSERT INTO Nhanvien (MaNV, HoNV, Ten, Diachi, Dienthoai) values ('" + em.MaNV + "','" + em.HoNV + "','" + em.Ten + "','" + em.Diachi + "','" + em.Dienthoai + "')";
 
             int NumberOfRows = MyExecuteNonQuery(sql);
             if (NumberOfRows > 0)

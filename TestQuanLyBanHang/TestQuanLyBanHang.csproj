@@ -53,6 +53,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NUnitTest\NUnitTestKhachHang.cs" />
     <Compile Include="NUnitTest\NUnitTestNhanVien.cs" />
     <Compile Include="NUnitTest\NUnitTestSanPham.cs" />
     <Compile Include="NUnitTest\NUnitTestUser.cs" />

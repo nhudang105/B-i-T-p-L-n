@@ -32,7 +32,9 @@ namespace TestQuanLyBanHang.NUnitTest
             new SanPham(null, "Cửa", "Cái", "65000"), //Trường hợp không nhập mã sản phẩm
             new SanPham("sp02", null, "Cái", "65000"), //Trường hợp không nhập tên sản phẩm
             new SanPham("sp03", "Tủ" , null, "65000"), //Trường hợp không nhập đơn vị tính
-            new SanPham("sp04", "Ghế" , "Cái", null) //Trường hợp không nhập đơn giá
+            new SanPham("sp04", "Ghế" , "Cái", null), //Trường hợp không nhập đơn giá
+            new SanPham("sp005","Sữa","Hộp","10000") //Trường hợp nhập mã sp quá 4 ký tự
+
         };
 
         [TestCaseSource(nameof(SanPhamForTestAdd2))]
