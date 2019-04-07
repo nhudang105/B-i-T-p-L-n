@@ -82,6 +82,20 @@ namespace QuanLyBanHang
                 else
                     MessageBox.Show("Delete Failed");
             }
+            else if (dgvSanPham.Columns[col] is DataGridViewButtonColumn && dgvSanPham.Columns[col].Name == "cotSua")
+            {
+                int row = e.RowIndex;
+                string id = dgvSanPham.Rows[row].Cells["CotCanLay"].Value.ToString();
+                SanPham sp = SPBUS.GetById(id);
+                sp.TenSP = txtTenSP.Text;
+                sp.Donvitinh = txtDvt.Text;
+                sp.Dongia = txtDonGia.Text;
+                            
+                int number = SPBUS.Update(sp);
+                       
+                List<SanPham> list = SPBUS.LoadSanPham();
+                dgvSanPham.DataSource = list;
+            }
         }
     }
 }

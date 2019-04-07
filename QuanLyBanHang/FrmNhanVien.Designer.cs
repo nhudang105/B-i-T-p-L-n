@@ -46,6 +46,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CotXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel1.Controls.Add(this.txtDt);
             this.splitContainer1.Panel1.Controls.Add(this.txtDiaChi);
@@ -84,7 +86,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(368, 163);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(145, 46);
@@ -192,6 +194,7 @@
             this.Column3,
             this.Column4,
             this.Column5,
+            this.cotSua,
             this.CotXoa});
             this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNhanVien.Location = new System.Drawing.Point(0, 0);
@@ -234,6 +237,14 @@
             this.Column5.DataPropertyName = "Dienthoai";
             this.Column5.HeaderText = "Điện thoại";
             this.Column5.Name = "Column5";
+            // 
+            // cotSua
+            // 
+            this.cotSua.HeaderText = "Sửa";
+            this.cotSua.Name = "cotSua";
+            this.cotSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cotSua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cotSua.Width = 40;
             // 
             // CotXoa
             // 
@@ -280,6 +291,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewButtonColumn cotSua;
         private System.Windows.Forms.DataGridViewButtonColumn CotXoa;
     }
 }

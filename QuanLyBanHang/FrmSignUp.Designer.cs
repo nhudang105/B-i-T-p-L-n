@@ -98,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(553, 294);
             this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.txtPassword);
@@ -107,7 +108,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmSignUp";
             this.Text = "FrmSignUp";
-            //this.Load += new System.EventHandler(this.FrmSignUp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

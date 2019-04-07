@@ -20,5 +20,13 @@ namespace DTO
             Donvitinh = unit;
             Dongia = unitprice;
         }
+
+        public SanPham()
+        {
+            MaSP = "";
+            TenSP = "";
+            Donvitinh = "";
+            Dongia = "";
+        }
     }
 }

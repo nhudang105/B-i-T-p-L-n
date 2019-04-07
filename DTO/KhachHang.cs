@@ -22,5 +22,14 @@ namespace DTO
             DienThoai = phonenumber;
             Fax = fax;
         }
+
+        public KhachHang()
+        {
+            MaKH = "";
+            TenKH = "";
+            DiaChi = "";
+            DienThoai = "";
+            Fax = "";
+        }
     }
 }

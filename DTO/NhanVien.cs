@@ -22,5 +22,14 @@ namespace DTO
             Diachi = address;
             Dienthoai = phone;
         }
+
+        public NhanVien()
+        {
+            MaNV = "";
+            HoNV = "";
+            Ten = "";
+            Diachi = "";
+            Dienthoai = "";
+        }
     }
 }

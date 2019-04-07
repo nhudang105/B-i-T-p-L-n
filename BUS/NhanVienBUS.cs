@@ -26,5 +26,15 @@ namespace BUS
         {
             return NVDAO.Delete(id);
         }
+
+        public int Update(NhanVien nv)
+        {
+            return NVDAO.Update(nv);
+        }
+
+        public NhanVien GetById(string id)
+        {
+            return NVDAO.GetById(id);
+        }
     }
 }

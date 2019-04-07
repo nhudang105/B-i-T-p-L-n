@@ -54,5 +54,20 @@ namespace TestQuanLyBanHang.NUnitTest
             Assert.Negative(spDAO.Add(p)); //Nếu giá trị trả về < 0 là đúng    
         }
 
+        [TestCase("sp01",Description = "Xóa sản phẩm")]
+        public void TestDelete(string id)
+        {
+            Assert.Positive(spDAO.Delete(id)); //Nếu giá trị trả về > 0 là đúng    
+        }
+
+        static SanPham[] SanPhamForTestUpdate =
+        {
+            new SanPham("sp02", "Bánh", "Cái", "55000"), //Đổi tên cho sp có mã sp02
+        };
+        [TestCaseSource(nameof(SanPhamForTestUpdate))]
+        public void TestUpdate(SanPham sp)
+        {
+            Assert.Positive(spDAO.Update(sp));
+        }
     }
 }

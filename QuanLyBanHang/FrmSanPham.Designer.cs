@@ -43,6 +43,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cotSua = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CotXoa = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.splitContainer1.Panel1.Controls.Add(this.btnAdd);
             this.splitContainer1.Panel1.Controls.Add(this.txtDonGia);
             this.splitContainer1.Panel1.Controls.Add(this.txtDvt);
@@ -79,7 +81,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(344, 148);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(135, 48);
@@ -168,6 +170,7 @@
             this.Column2,
             this.Column3,
             this.Column4,
+            this.cotSua,
             this.CotXoa});
             this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSanPham.Location = new System.Drawing.Point(0, 0);
@@ -204,10 +207,20 @@
             this.Column4.HeaderText = "Đơn giá";
             this.Column4.Name = "Column4";
             // 
+            // cotSua
+            // 
+            this.cotSua.HeaderText = "Sửa";
+            this.cotSua.Name = "cotSua";
+            this.cotSua.Text = "Sửa";
+            this.cotSua.UseColumnTextForButtonValue = true;
+            this.cotSua.Width = 40;
+            // 
             // CotXoa
             // 
             this.CotXoa.HeaderText = "Xóa";
             this.CotXoa.Name = "CotXoa";
+            this.CotXoa.Text = "Xóa";
+            this.CotXoa.UseColumnTextForButtonValue = true;
             this.CotXoa.Width = 40;
             // 
             // FrmSanPham
@@ -246,6 +259,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewButtonColumn cotSua;
         private System.Windows.Forms.DataGridViewButtonColumn CotXoa;
     }
 }

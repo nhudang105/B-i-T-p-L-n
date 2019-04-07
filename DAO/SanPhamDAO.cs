@@ -33,6 +33,27 @@ namespace DAO
             return list;
         }
 
+        public SanPham GetById(string id)
+        {
+            Connect();
+            string sql = "SELECT * FROM SanPham WHERE MaSP = '" + id + "'";
+            SqlDataReader dr = MyExecuteReader(sql);
+            string msSP, name, unit, unitprice;
+            SanPham sp = new SanPham();
+            while (dr.Read())
+            {
+                msSP = dr[0].ToString();
+                name = dr[1].ToString();
+                unit = dr[2].ToString();
+                unitprice = dr[3].ToString();
+                sp = new SanPham(msSP, name, unit, unitprice);
+            }
+            dr.Close();
+            DisConnect();
+            return sp;
+
+        }
+
         public int Add(SanPham p)
         {
             string sql = "INSERT INTO SanPham (MaSP, TenSP, Donvitinh, Dongia) values ('" + p.MaSP + "','" + p.TenSP + "','" + p.Donvitinh + "','" + p.Dongia + "')";
@@ -44,7 +65,7 @@ namespace DAO
                 return -1;
         }
 
-        public int Delete (string id)
+        public int Delete(string id)
         {
             string sql = "DELETE FROM SanPham WHERE MaSP = '" + id + "'";
             int NumberOfRows = MyExecuteNonQuery(sql);
@@ -52,7 +73,21 @@ namespace DAO
                 return NumberOfRows;
             else
                 return -1;
-        }     
+        }
+
+        public int Update(SanPham sp)
+        {
+            string sql = "UPDATE SanPham  SET TenSP = '" + sp.TenSP + "'," +
+                                        " Donvitinh = '" + sp.Donvitinh + "'," +
+                                           " Dongia = '" + sp.Dongia + "'" +
+                                       " WHERE MaSP = '" + sp.MaSP+ "'";
+
+            int NumberOfRows = MyExecuteNonQuery(sql);
+            if (NumberOfRows > 0)
+                return NumberOfRows;
+            else
+                return -1;
+        }
     }
-    
+
 }

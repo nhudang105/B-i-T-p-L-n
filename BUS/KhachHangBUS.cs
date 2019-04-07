@@ -27,5 +27,14 @@ namespace BUS
             return KHDAO.Delete(id);
         }
 
+        public int Update(KhachHang kh)
+        {
+            return KHDAO.Update(kh);
+        }
+
+        public KhachHang GetById(string id)
+        {
+            return KHDAO.GetById(id);
+        }
     }
 }

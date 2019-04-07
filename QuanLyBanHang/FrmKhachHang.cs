@@ -65,6 +65,21 @@ namespace QuanLyBanHang
                 else
                     MessageBox.Show("Delete Failed");
             }
+            else if (dgvKhachHang.Columns[col] is DataGridViewButtonColumn && dgvKhachHang.Columns[col].Name == "cotSua")
+            {
+                int row = e.RowIndex;
+                string id = dgvKhachHang.Rows[row].Cells["CotCanLay"].Value.ToString();
+                KhachHang kh = KHBUS.GetById(id);
+                kh.TenKH = txtTen.Text;
+                kh.DiaChi = txtDiaChi.Text;
+                kh.DienThoai = txtSdt.Text;
+                kh.Fax = txtSofax.Text;
+                
+                int number = KHBUS.Update(kh);
+
+                List<KhachHang> list = KHBUS.LoadKhachHang();
+                dgvKhachHang.DataSource = list;
+            }
         }
     }
 }

@@ -52,5 +52,21 @@ namespace TestQuanLyBanHang.NUnitTest
         {
             Assert.Negative(nvDAO.Add(e)); //Nếu giá trị trả về <0 là đúng
         }
+
+        [TestCase("E01", Description = "Xóa nhân viên")]
+        public void TestDelete(string id)
+        {
+            Assert.Positive(nvDAO.Delete(id)); //Nếu giá trị trả về > 0 là đúng    
+        }
+
+        static NhanVien[] NhanVienForTestUpdate =
+        {
+            new NhanVien("E02", "Lê", "Ti","230 BS","029390"), //Đổi tên cho nv có mã E02
+        };
+        [TestCaseSource(nameof(NhanVienForTestUpdate))]
+        public void TestUpdate(NhanVien nv)
+        {
+            Assert.Positive(nvDAO.Update(nv));
+        }
     }
 }

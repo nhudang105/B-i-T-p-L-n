@@ -62,9 +62,9 @@
             // btnUsers
             // 
             this.btnUsers.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsers.Location = new System.Drawing.Point(126, 140);
+            this.btnUsers.Location = new System.Drawing.Point(108, 140);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(103, 61);
+            this.btnUsers.Size = new System.Drawing.Size(121, 61);
             this.btnUsers.TabIndex = 2;
             this.btnUsers.Text = "Đăng Ký User Mới";
             this.btnUsers.UseVisualStyleBackColor = true;
@@ -107,6 +107,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnNhanVien);
             this.Controls.Add(this.btnKhachHang);

@@ -64,6 +64,21 @@ namespace QuanLyBanHang
                 else
                     MessageBox.Show("Delete Failed");
             }
+            else if (dgvNhanVien.Columns[col] is DataGridViewButtonColumn && dgvNhanVien.Columns[col].Name == "cotSua")
+            {
+                int row = e.RowIndex;
+                string id = dgvNhanVien.Rows[row].Cells["CotCanLay"].Value.ToString();
+                NhanVien nv = NVBUS.GetById(id);
+                nv.HoNV = txtHo.Text;
+                nv.Ten = txtTen.Text;
+                nv.Diachi = txtDiaChi.Text;
+                nv.Dienthoai = txtDt.Text;
+                
+                int number = NVBUS.Update(nv);
+
+                List<NhanVien> list = NVBUS.LoadNhanVien();
+                dgvNhanVien.DataSource = list;
+            }
         }
     }
 }

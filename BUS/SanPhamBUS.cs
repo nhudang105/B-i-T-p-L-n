@@ -26,5 +26,16 @@ namespace BUS
         {
             return SPDAO.Delete(id);
         }
+
+        public int Update(SanPham sp)
+        {
+            return SPDAO.Update(sp);
+        }
+
+        public SanPham GetById(string id)
+        {
+            return SPDAO.GetById(id);
+        }
+
     }
 }

@@ -34,6 +34,28 @@ namespace DAO
             return list;
         }
 
+        public NhanVien GetById(string id)
+        {
+            Connect();
+            string sql = "SELECT * FROM NhanVien WHERE MaNV = '" + id + "'";
+            SqlDataReader dr = MyExecuteReader(sql);
+            string manv, honv, ten, diachi, dienthoai;
+            NhanVien nv = new NhanVien();
+            while (dr.Read())
+            {
+                manv = dr[0].ToString();
+                honv = dr[1].ToString();
+                ten = dr[2].ToString();
+                diachi = dr[3].ToString();
+                dienthoai = dr[4].ToString();
+                nv = new NhanVien(manv,honv,ten,diachi,dienthoai);
+            }
+            dr.Close();
+            DisConnect();
+            return nv;
+
+        }
+
         public int Add(NhanVien em)
         {
             string sql = "INSERT INTO Nhanvien (MaNV, HoNV, Ten, Diachi, Dienthoai) values ('" + em.MaNV + "','" + em.HoNV + "','" + em.Ten + "','" + em.Diachi + "','" + em.Dienthoai + "')";
@@ -48,6 +70,22 @@ namespace DAO
         public int Delete(string id)
         {
             string sql = "DELETE FROM Nhanvien WHERE MaNV = '" + id + "'";
+            int NumberOfRows = MyExecuteNonQuery(sql);
+            if (NumberOfRows > 0)
+                return NumberOfRows;
+            else
+                return -1;
+        }
+
+        public int Update(NhanVien nv)
+        {
+            string sql = "UPDATE NhanVien SET MaNV = '" + nv.MaNV + "'," +
+                                        " HoNV = '" + nv.HoNV + "'," +
+                                           " Ten = '" + nv.Ten + "'," +
+                                           " Diachi = '" + nv.Diachi + "'," +
+                                           " Dienthoai = '" + nv.Dienthoai + "'" +
+                                       " WHERE MaNV = '" + nv.MaNV + "'";
+
             int NumberOfRows = MyExecuteNonQuery(sql);
             if (NumberOfRows > 0)
                 return NumberOfRows;

@@ -52,5 +52,22 @@ namespace TestQuanLyBanHang.NUnitTest
         {
             Assert.Negative(khDAO.Add(c)); //Nếu giá trị trả về <0 là đúng
         }
+
+        [TestCase("C01", Description = "Xóa sản phẩm")]
+        public void TestDelete(string id)
+        {
+            Assert.Positive(khDAO.Delete(id)); //Nếu giá trị trả về > 0 là đúng    
+        }
+
+        static KhachHang[] KhachHangForTestUpdate =
+        {
+            new KhachHang("C03","Lan","3209 LL","0930","0938"), //Đổi tên cho kh có mã C03
+        };
+        [TestCaseSource(nameof(KhachHangForTestUpdate))]
+        public void TestUpdate(KhachHang kh)
+        {
+            Assert.Positive(khDAO.Update(kh));
+            Assert.Positive(khDAO.Update(kh));
+        }
     }
 }
