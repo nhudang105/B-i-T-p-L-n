@@ -33,36 +33,18 @@ namespace QuanLyBanHang
             name = txtTenSP.Text;
             unit = txtDvt.Text;
             unitprice = txtDonGia.Text;
-            if (string.IsNullOrEmpty(id))// Nếu id rỗng 
+            SanPham p = new SanPham(id, name, unit, unitprice);
+
+            int NumberOfRows = SPBUS.Add(p);
+            if (NumberOfRows > 0)
             {
-                MessageBox.Show("Chưa nhập Mã sản phẩm");
-            }
-            else if (string.IsNullOrEmpty(name))// Nếu name rỗng 
-            {
-                MessageBox.Show("Chưa nhập Tên sản phẩm");
-            }
-            else if(string.IsNullOrEmpty(unit))// Nếu unit rỗng 
-            {
-                MessageBox.Show("Chưa nhập Đơn vị tính");
-            }
-            else if(string.IsNullOrEmpty(unitprice))// Nếu unitprice rỗng 
-            {
-                MessageBox.Show("Chưa nhập Đơn giá");
+                List<SanPham> list = SPBUS.LoadSanPham();
+                dgvSanPham.DataSource = list;
+                MessageBox.Show("Thêm " + NumberOfRows + " sản phẩm thành công");
             }
             else
-            {
-                SanPham p = new SanPham(id, name, unit, unitprice);
+                MessageBox.Show("Thêm thất bại");
 
-                int NumberOfRows = SPBUS.Add(p);
-                if (NumberOfRows > 0)
-                {
-                    List<SanPham> list = SPBUS.LoadSanPham();
-                    dgvSanPham.DataSource = list;
-                    MessageBox.Show("Successfully Added " + NumberOfRows + " Product");
-                }
-                else
-                    MessageBox.Show("Add Failed");
-            }
         }
 
         private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -77,16 +59,23 @@ namespace QuanLyBanHang
                 {
                     List<SanPham> list = SPBUS.LoadSanPham();
                     dgvSanPham.DataSource = list;
-                    MessageBox.Show("Successfully deleted " + NumberOfRows + " Product");
+                    MessageBox.Show("Xóa " + NumberOfRows + " sản phẩm thành công");
                 }
                 else
-                    MessageBox.Show("Delete Failed");
+                    MessageBox.Show("Xóa thất bại");
             }
             else if (dgvSanPham.Columns[col] is DataGridViewButtonColumn && dgvSanPham.Columns[col].Name == "cotSua")
             {
                 int row = e.RowIndex;
                 string id = dgvSanPham.Rows[row].Cells["CotCanLay"].Value.ToString();
                 SanPham sp = SPBUS.GetById(id);
+                //string name, unit, unitprice;
+                //id = txtMaSP.Text;
+                //name = txtTenSP.Text;
+                //unit = txtDvt.Text;
+                //unitprice = txtDonGia.Text;
+                //SanPham p = new SanPham(id, name, unit, unitprice);
+                sp.TenSP = txtTenSP.Text;
                 sp.TenSP = txtTenSP.Text;
                 sp.Donvitinh = txtDvt.Text;
                 sp.Dongia = txtDonGia.Text;

@@ -244,12 +244,16 @@
             this.cotSua.Name = "cotSua";
             this.cotSua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cotSua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cotSua.Text = "Sửa";
+            this.cotSua.UseColumnTextForButtonValue = true;
             this.cotSua.Width = 40;
             // 
             // CotXoa
             // 
             this.CotXoa.HeaderText = "Xóa";
             this.CotXoa.Name = "CotXoa";
+            this.CotXoa.Text = "Xóa";
+            this.CotXoa.UseColumnTextForButtonValue = true;
             this.CotXoa.Width = 40;
             // 
             // FrmNhanVien

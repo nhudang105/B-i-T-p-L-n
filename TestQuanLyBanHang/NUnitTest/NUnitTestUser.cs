@@ -23,6 +23,7 @@ namespace TestQuanLyBanHang.NUnitTest
         [TestCase("admin123", "12345", false, Description = "Trường hợp sai username")]
         [TestCase("admin", "", false, Description = "Trường hợp không nhập password")]
         [TestCase("", "12345", false, Description = "Trường hợp không nhập username")]
+
         public void TestLogin(string userName, string password, bool expected)
         {
             Assert.AreEqual(expected, userDAO.Login(userName, password));
@@ -36,14 +37,14 @@ namespace TestQuanLyBanHang.NUnitTest
         [TestCaseSource(nameof(UsersForTestAdd))]
         public void TestAdd(Users u)
         {
-            Assert.Positive(userDAO.Add(u)); //Nếu giá trị trả về .0 là đúng
+            Assert.Positive(userDAO.Add(u)); //Nếu giá trị trả về >0 là đúng
         }
 
         static Users[] UsersForTestAdd2 =
         {
-            new Users("us2", "P@ssword01"), //Trường hợp nhập username đã có
+            //new Users("us2", "12345"), //Trường hợp nhập username đã có
             new Users("us4", "password"), //Trường hợp nhập password không hợp lệ
-            new Users("us55555555555555555555", "P@ssword01"), //Trường hợp nhập username quá dài
+            //new Users("us55555555555555555555", "P@ssword01"), //Trường hợp nhập username quá dài
             new Users("","P@ssword01"), //Trường hợp không nhập username
         };
 

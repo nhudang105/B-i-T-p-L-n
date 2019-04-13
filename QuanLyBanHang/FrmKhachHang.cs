@@ -42,10 +42,10 @@ namespace QuanLyBanHang
             {
                 List<KhachHang> list = KHBUS.LoadKhachHang();
                 dgvKhachHang.DataSource = list;
-                MessageBox.Show("Add Success");
+                MessageBox.Show("Thêm " + NumberOfRows + " khách hàng thành công" );
             }
             else
-                MessageBox.Show("Add Failed");
+                MessageBox.Show("Thêm thất bại");
         }
 
         private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,10 +60,10 @@ namespace QuanLyBanHang
                 {
                     List<KhachHang> list = KHBUS.LoadKhachHang();
                     dgvKhachHang.DataSource = list;
-                    MessageBox.Show("Successfully deleted " + NumberOfRows + " Customer");
+                    MessageBox.Show("Xóa " + NumberOfRows + " khách hàng thành công");
                 }
                 else
-                    MessageBox.Show("Delete Failed");
+                    MessageBox.Show("Xóa thất bại");
             }
             else if (dgvKhachHang.Columns[col] is DataGridViewButtonColumn && dgvKhachHang.Columns[col].Name == "cotSua")
             {

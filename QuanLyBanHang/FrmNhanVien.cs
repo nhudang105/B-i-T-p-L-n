@@ -41,10 +41,10 @@ namespace QuanLyBanHang
             {
                 List<NhanVien> list = NVBUS.LoadNhanVien();
                 dgvNhanVien.DataSource = list;
-                MessageBox.Show("Successfully Added " + NumberOfRows + " Employee" );
+                MessageBox.Show("Thêm " + NumberOfRows + " nhân viên thành công" );
             }
             else
-                MessageBox.Show("Add Failed");
+                MessageBox.Show("Thêm thất bại");
         }
 
         private void dgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -59,10 +59,10 @@ namespace QuanLyBanHang
                 {
                     List<NhanVien> list = NVBUS.LoadNhanVien();
                     dgvNhanVien.DataSource = list;
-                    MessageBox.Show("Successfully deleted " + NumberOfRows + " Employee");
+                    MessageBox.Show("Xóa " + NumberOfRows + " nhân viên thành công");
                 }
                 else
-                    MessageBox.Show("Delete Failed");
+                    MessageBox.Show("Xóa thất bại");
             }
             else if (dgvNhanVien.Columns[col] is DataGridViewButtonColumn && dgvNhanVien.Columns[col].Name == "cotSua")
             {

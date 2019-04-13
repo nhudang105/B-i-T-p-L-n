@@ -41,7 +41,7 @@ namespace QuanLyBanHang
                     if (IsAcceptPass(pass))
                     {
                         // Kiểm tra UserName,nếu chưa tồn tại thì cho đăng ký
-                        // pass hợp lệ mới cho đăng ký
+                        // Password hợp lệ mới cho đăng ký
                         Users u = new Users(name, pass);
                         int NumberOfRows = uBUS.Add(u);
                         if (NumberOfRows > 0)
